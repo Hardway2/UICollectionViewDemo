@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="U6b-Vx-4bR">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="229"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="美女" translatesAutoresizingMaskIntoConstraints="NO" id="KAV-yL-NYG">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="229"/>
+                </imageView>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="KAV-yL-NYG" secondAttribute="bottom" id="HPA-jl-p52"/>
+                <constraint firstItem="KAV-yL-NYG" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" id="Hpu-Dl-Q2L"/>
+                <constraint firstAttribute="trailing" secondItem="KAV-yL-NYG" secondAttribute="trailing" id="YK2-6H-Rh6"/>
+                <constraint firstItem="KAV-yL-NYG" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" id="zCB-ys-EsX"/>
+            </constraints>
+            <point key="canvasLocation" x="362" y="264.5"/>
+        </collectionReusableView>
+    </objects>
+    <resources>
+        <image name="美女" width="728" height="1092"/>
+    </resources>
+</document>

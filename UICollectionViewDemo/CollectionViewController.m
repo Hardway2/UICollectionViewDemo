@@ -9,10 +9,14 @@
 #import "CollectionViewController.h"
 #import "CollectionModel.h"
 #import "CollectionViewCell.h"
+#import "CollectionReusableView.h"
+
+#define ScreenW [UIScreen mainScreen].bounds.size.width
 
 NSString *const ID = @"cell";
+NSString *const HeaderID = @"reusableView";
 
-@interface CollectionViewController (){
+@interface CollectionViewController ()<UICollectionViewDataSource, UICollectionViewDelegate>{
     
     NSMutableArray *_array;
 }
@@ -20,6 +24,26 @@ NSString *const ID = @"cell";
 @end
 
 @implementation CollectionViewController
+
+-(id)initWithCoder:(NSCoder *)aDecoder
+{
+    UICollectionViewFlowLayout *flow = [[UICollectionViewFlowLayout alloc] init];
+    
+    // 设置每一个各自的大小
+    flow.itemSize = CGSizeMake(ScreenW/2-10, 109);
+    
+    // 水平方向上的间距
+    flow.minimumInteritemSpacing = 10;
+    
+    // 垂直方向上的间距
+    flow.minimumLineSpacing = 10;
+    
+    flow.headerReferenceSize = CGSizeMake(ScreenW, 200);
+
+    flow.sectionInset = UIEdgeInsetsMake(10, 0, 0, 0);
+    
+    return [self initWithCollectionViewLayout:flow];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -35,7 +59,11 @@ NSString *const ID = @"cell";
     
     //注册
     UINib *nib = [UINib nibWithNibName:[CollectionViewCell xib] bundle:nil];
+    UINib *headerNib = [UINib nibWithNibName:[CollectionReusableView xib] bundle:nil];
+    
     [self.collectionView registerNib:nib forCellWithReuseIdentifier:ID];
+    [self.collectionView registerNib:headerNib forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:HeaderID];
+    self.collectionView.contentInset = UIEdgeInsetsMake(64, 0, 0, 0);
 }
 
 #pragma mark - UICollectionView DataSource
@@ -49,6 +77,18 @@ NSString *const ID = @"cell";
     CollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:ID forIndexPath:indexPath];
     cell.model = _array[indexPath.row];
     return cell;
+}
+
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
+
+    return 10;
+}
+
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
+{
+    CollectionReusableView *header = [collectionView dequeueReusableSupplementaryViewOfKind:
+                                   UICollectionElementKindSectionHeader withReuseIdentifier:HeaderID forIndexPath:indexPath];
+    return header;
 }
 
 #pragma mark - UICollectionView Delegate

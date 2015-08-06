@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>D43E4ACD-5BEA-44FF-9011-3ABD740C6843</string>
 	<key>IDESourceControlProjectName</key>
-	<string>UICollectionViewDemo</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>EC0557886A53C18FB25419F1986347D19692BA33</key>
 		<string>https://github.com/Hardway2/UICollectionViewDemo.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>UICollectionViewDemo.xcodeproj</string>
+	<string>UICollectionViewDemo.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>EC0557886A53C18FB25419F1986347D19692BA33</key>
