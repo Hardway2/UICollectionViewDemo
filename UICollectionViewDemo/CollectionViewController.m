@@ -79,11 +79,6 @@ NSString *const HeaderID = @"reusableView";
     return cell;
 }
 
-- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
-
-    return 10;
-}
-
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
 {
     CollectionReusableView *header = [collectionView dequeueReusableSupplementaryViewOfKind:
